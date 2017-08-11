@@ -13,18 +13,6 @@ body {
   border-radius: 5px;
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
-  background: url(/images/1.jpg?eb5f61d80677abf198d136689211c3c6);
-}
-
-.box2 {
-  width: 100px;
-  border: solid 1px #cc0000;
-  height: 100px;
-  border-radius: 5px;
-  -webkit-transform: rotate(10deg);
-  transform: rotate(10deg);
-}
-
-.hello {
-  background: green;
+  background: url(/images/1.jpg?e4922f3396dc2e84c31c2654aeee2b8b) no-repeat;
+  background-size: cover;
 }

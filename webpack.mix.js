@@ -35,19 +35,17 @@ mix.js('src/app.js', 'dist')
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
-          'url-loader?limit=10000',
-          'img-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'dist/[name].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader'
+          }
         ]
-      },
-      // {
-      //   test: /\.(html)$/,
-      //   use: {
-      //     loader: 'html-loader',
-      //     options: {
-      //       attrs: [':data-src']
-      //     }
-      //   }
-      // }
+      }
     ]
   }
 
