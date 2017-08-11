@@ -13,6 +13,7 @@ body {
   border-radius: 5px;
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
+  background: url(/images/1.jpg?eb5f61d80677abf198d136689211c3c6);
 }
 
 .box2 {

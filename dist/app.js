@@ -10355,7 +10355,7 @@ return jQuery;
 /* 4 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib\n  Referenced from: /Applications/XAMPP/xamppfiles/htdocs/laravel-mix/mix/node_modules/mozjpeg/vendor/cjpeg\n  Reason: image not found\n\n    at Promise.all.then.arr (/Applications/XAMPP/xamppfiles/htdocs/laravel-mix/mix/node_modules/execa/index.js:231:11)\n    at process._tickCallback (internal/process/next_tick.js:109:7)");
+module.exports = "/images/1.jpg?eb5f61d80677abf198d136689211c3c6";
 
 /***/ }),
 /* 5 */

@@ -32,13 +32,13 @@ mix.js('src/app.js', 'dist')
       //     }
       //   ]
       // },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   use: [
-      //     'url-loader?limit=10000',
-      //     'img-loader'
-      //   ]
-      // },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          'url-loader?limit=10000',
+          'img-loader'
+        ]
+      },
       // {
       //   test: /\.(html)$/,
       //   use: {
