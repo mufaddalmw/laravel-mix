@@ -13,6 +13,6 @@ body {
   border-radius: 5px;
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
-  background: url(/images/1.jpg?e4922f3396dc2e84c31c2654aeee2b8b) no-repeat;
+  background: url("./1.jpg") no-repeat;
   background-size: cover;
 }
