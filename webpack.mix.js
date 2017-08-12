@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 const PurifyCSSPlugin = require('purifycss-webpack');
-const glob = require('glob');
+// const glob = require('glob');
 
 mix.js('src/app.js', 'dist')
    .sass('src/app.scss', 'dist')
@@ -16,7 +16,7 @@ mix.js('src/app.js', 'dist')
      plugins: [
       new PurifyCSSPlugin({
         // Give paths to parse for rules. These should be absolute!
-        paths: glob.sync(path.join(__dirname, 'src/*.html')),
+        // paths: glob.sync(path.join(__dirname, 'src/*.html')),
       })
     ],
     module: {
