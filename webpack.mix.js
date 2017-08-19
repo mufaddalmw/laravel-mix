@@ -1,63 +1,39 @@
 const mix = require('laravel-mix');
-const PurifyCSSPlugin = require('purifycss-webpack');
-// const glob = require('glob');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 
-mix.js('src/app.js', 'dist')
-   .sass('src/app.scss', 'dist')
+mix.js('src/js/app.js', 'js/')
+   .sass('src/scss/app.scss', 'css/')
+   .setPublicPath('dist')
+   .setResourceRoot("../")
   //  .sourceMaps()
   //  .webpackConfig({ devtool: "inline-source-map" })
-   .copy('src/**/*.html', 'dist')
+  //  .copy('src/**/*.html', 'dist')
    .browserSync({
      files: ["dist/**/*"],
      server: "dist",
      proxy:''
    })
    .webpackConfig({
-     plugins: [
-      new PurifyCSSPlugin({
-        // Give paths to parse for rules. These should be absolute!
-        // paths: glob.sync(path.join(__dirname, 'src/*.html')),
-      })
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: 'Pug template',
+        template: 'src/index.pug', // Load a custom template (ejs by default see the FAQ for details)
+        excludeAssets: [/app.js/] // exclude style.js or style.[chunkhash].js 
+      }),
+      new HtmlWebpackExcludeAssetsPlugin()
     ],
     module: {
-    rules: [
-      // {
-      //   test: /\.(png|jpe?g|gif|svg)$/,
-      //   use: [
-      //     {
-      //       loader: 'url-loader'
-      //       // options: {
-      //       //   limit: 8192
-      //       // }
-      //     }
-      //   ]
-      // },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'dist/[name].[ext]'
-            }
-          },
-          {
-            loader: 'image-webpack-loader'
+       rules: [{
+        test: /\.(pug)$/,
+        use: {
+          loader: 'pug-loader',
+          options: {
+            minify:false
           }
-        ]
-      }
-    ]
-  }
-
-
-
-
-   })
-   .options({
-     processCssUrls: false,
-    //  purifyCss:{
-    //     paths: glob.sync(path.join(__dirname, 'src/*.html'))
-    //  }
+        }
+       }]
+     }
    });
 
 
