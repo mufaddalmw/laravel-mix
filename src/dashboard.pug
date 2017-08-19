@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  include components/head/head.pug
+    
+  body
+    h1 Hello I'm dashboard page
+    include components/box/box.pug
+    #container.col
+      if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Pug is a terse and simple templating language with a
+        strong focus on performance and powerful features.
+    script(type='text/javascript' src='js/app.js')
