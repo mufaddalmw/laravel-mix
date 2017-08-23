@@ -8,7 +8,6 @@ mix.js('src/js/app.js', 'js/')
    .setResourceRoot("../")
   //  .sourceMaps()
   //  .webpackConfig({ devtool: "inline-source-map" })
-  //  .copy('src/**/*.html', 'dist')
    .browserSync({
      files: ["dist/**/*"],
      server: "dist",
@@ -19,13 +18,13 @@ mix.js('src/js/app.js', 'js/')
       new HtmlWebpackPlugin({
         title: 'Pug template',
         template: 'src/index.pug', // Load a custom template (ejs by default see the FAQ for details)
-        excludeAssets: [/app.js/] // exclude style.js or style.[chunkhash].js 
+        excludeAssets: [/app.js/] // exclude style.js or style.[chunkhash].js
       }),
       new HtmlWebpackPlugin({
         title: 'Pug template',
         filename:'dashboard.html', //custom page name
         template: 'src/dashboard.pug', // Load a custom template (ejs by default see the FAQ for details)
-        excludeAssets: [/app.js/] // exclude style.js or style.[chunkhash].js 
+        excludeAssets: [/app.js/] // exclude style.js or style.[chunkhash].js
       }),
       new HtmlWebpackExcludeAssetsPlugin()
     ],

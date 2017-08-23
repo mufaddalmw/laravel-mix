@@ -1,4 +1,11 @@
 import $ from 'jquery'
-let name = "I'm from box.js"
-// $('body').html(name);
-console.log(name);
+
+export default function(name='john'){
+  // let name = "I'm from box.js";
+  console.log(`I'm ${name}`);
+}
+// export {box};
+
+import {Animal, Dog} from "../classes/classes.js";
+var d = new Dog('Mitzie');
+d.hear(); // Mitzie barks.
