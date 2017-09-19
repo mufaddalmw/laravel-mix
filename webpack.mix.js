@@ -8,7 +8,6 @@ mix.js('src/js/app.js', 'js/')
    .setResourceRoot("../")
   //  .sourceMaps()
   //  .webpackConfig({ devtool: "inline-source-map" })
-  //  .copy('src/**/*.html', 'dist')
    .browserSync({
      files: ["dist/**/*"],
      server: "dist",
