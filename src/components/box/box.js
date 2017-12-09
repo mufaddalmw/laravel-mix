@@ -1,4 +1,5 @@
-import $ from 'jquery'
+import $ from 'jquery';
+// import celebrity from './celebrity.jpg';
 
 export default function(name='john'){
   // let name = "I'm from box.js";

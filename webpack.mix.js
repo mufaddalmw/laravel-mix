@@ -29,10 +29,25 @@ mix.js('src/js/app.js', 'js/')
       new HtmlWebpackExcludeAssetsPlugin()
     ],
     module: {
-       rules: [{
-        test: /\.(pug)$/,
-        use: 'pug-loader'
-       }]
+      rules: [
+        {
+          test: /\.(pug)$/,
+          use: 'pug-loader'
+        },
+        {
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            {
+              loader: 'file-loader?name=[name].[ext]&outputPath=images/',
+              // loader: 'url-loader',
+              // options: {
+              //   limit: 8192
+              // }
+              
+            }
+          ]
+        }
+      ]
      }
    });
 
